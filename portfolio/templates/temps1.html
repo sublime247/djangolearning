@@ -1,0 +1,15 @@
+{% extends 'main.html' %}
+{% block content %}
+{% if number < 40 %}
+<p>{{message}}</p>
+<p>{{msg}}</p>
+{%else%}
+<p>Keep going</p>
+{% endif %}
+<ul>
+    {% for proj in projlst %}
+    <li>{{proj.title}}-----{{proj.id}}</li>
+    {%endfor%}
+</ul>
+<h1>Insha'Allah I will be there</h1>
+{% endblock content %}
