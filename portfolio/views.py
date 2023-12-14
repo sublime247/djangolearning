@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render , redirect
 
 # Create your views here.
 from django.http import HttpResponse
@@ -20,6 +20,11 @@ def project1(request, pk):
 
 def createProject(request):
     form = ProjectForm()
+    if request.method == 'POST':
+        form = ProjectForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('projects')
     context = {'form':form}
     return render(request, 'project_form.html', context)
 
