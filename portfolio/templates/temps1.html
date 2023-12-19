@@ -8,7 +8,7 @@
 {% endif %}
 <ul>
     {% for proj in projlst %}
-    <li><a href="{%url 'project1' 'projlst.id' %}">{{proj.title}}-----{{proj.id}}-----{{proj.added_time}}</a></li>
+    <li><a href="{%url 'project1' proj.id %}">{{proj.title}}-----{{proj.id}}-----{{proj.added_time}}</a> <span><a href="{%url 'update-project' proj.id %}">Edit</a></span>  <span><a href="{%url 'delete-project' proj.id %}">Delete</a></span></li>
     {%endfor%}
 </ul>
 <h1>Insha'Allah I will be there</h1>
